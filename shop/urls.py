@@ -6,3 +6,4 @@ urlpatterns = [
     path('shopingcart/', views.shopingcart, name='shopingcart'),
     path('shopdetails/', views.shopdetails, name='shopdetails'),
 ]
+ 
