@@ -7,4 +7,4 @@ def shopdetails(request):
     return render(request,'shopdetails.html')
 
 def shopingcart(request):
-    return render(request,'shopingcart.html')
+    return render(request,'shopingcart.html') 
