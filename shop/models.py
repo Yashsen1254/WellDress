@@ -17,7 +17,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.IntegerField(max_length=5)
     image = models.ImageField(upload_to="products")
 
     def __str__(self):
@@ -32,7 +32,7 @@ class Wishlist(models.Model):
 
 class Offer(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    discount = models.DecimalField(max_digits=5, decimal_places=2)  # percentage discount
+    discount = models.DecimalField(max_digits=5, decimal_places=2)
     validity = models.DateField()
 
     def __str__(self):
@@ -76,7 +76,7 @@ class Checkout(models.Model):
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.PositiveIntegerField()  # rating out of 5
+    rating = models.PositiveIntegerField()
     comment = models.TextField(blank=True, null=True)
 
     def __str__(self):
